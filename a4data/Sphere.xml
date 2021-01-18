@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<scene ambient="0.1 0.1 0.1 1.0">
+  <!-- define camera,material,lights here -->
+  <light name="myLight" color="1 1 1" from="0 5 5" power="1.0" type="point" />
+  <material name="red" diffuse="1 0 0" specular="0.8 0.8 0.8" hardness="32" />
+  
+  <material name="post" specular="1 0.5 0.5" hardness="32">
+	<color r="0.5" g="0.5" b="0.5" a="1"/>
+  </material>
+  
+  <!-- render configuration -->
+  <render bgcolor="0 0 0" output="Sphere.png" jitter="true" samples="40">
+      <camera name="myCamera" from="0 0 8" to="0 0 0" up="0 1 0" fovy="45" width="512" height="512" />
+  </render> 
+  
+  <!-- scene objects -->
+  <node name="root" >
+	  <sphere center="0 0 0" radius="1.0" >
+	    <material ref="red" />
+	  </sphere>
+  </node>
+</scene>
